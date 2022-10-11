@@ -24,6 +24,15 @@
     return newArray;
 }
 
+void PrintArray (string [] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write ($"{array [i]}\t");
+    }
+    return;
+}
+
 try
 {
     Console.Write ("Введите количество элементов массива: ");
@@ -35,6 +44,8 @@ try
         array [i] = Console.ReadLine ();
     }
     string [] newArray = GetNewArray (array);
+    Console.Write ("Элементы массива состоящие из 3 символов: ");
+    PrintArray (newArray);
 }
 catch
 {

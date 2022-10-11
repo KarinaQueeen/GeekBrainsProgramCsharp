@@ -8,7 +8,9 @@
         {
             newSize++;
         }
+        
     }
+    if (newSize == 0) Console.WriteLine($"В массиве нет элементов состоящих из {lengthWord} и менее символов!");
 
     string [] newArray = new string [newSize];
 
@@ -28,7 +30,7 @@ void PrintArray (string [] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write ($"{array [i]}\t");
+        Console.Write ($"{i + 1}: {array [i]}\t");
     }
     return;
 }
@@ -44,8 +46,12 @@ try
         array [i] = Console.ReadLine ();
     }
     string [] newArray = GetNewArray (array);
-    Console.Write ("Элементы массива состоящие из 3 символов: ");
-    PrintArray (newArray);
+    if (newArray.Length > 0)
+    {
+       Console.Write ("Элементы массива состоящие из 3 символов: ");
+        PrintArray (newArray); 
+    }
+    
 }
 catch
 {
